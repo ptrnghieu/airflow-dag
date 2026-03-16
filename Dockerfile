@@ -1,0 +1,9 @@
+FROM apache/airflow:3.1.1rc1-python3.10
+
+# Copy and setup dependencies
+COPY requirements.txt /opt/airflow/requirements.txt
+RUN pip install --no-cache-dir -r /opt/airflow/requirements.txt
+
+# Set working directory
+WORKDIR /opt/airflow
+
